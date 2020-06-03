@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\VSProjects\\GEM\\GEM\\GEM\\GEM\\GEM.csproj": {}
+    "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM\\GEM.csproj": {}
   },
   "projects": {
-    "E:\\VSProjects\\GEM\\GEM\\GEM\\GEM\\GEM.csproj": {
+    "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM\\GEM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\VSProjects\\GEM\\GEM\\GEM\\GEM\\GEM.csproj",
+        "projectUniqueName": "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM\\GEM.csproj",
         "projectName": "GEM",
-        "projectPath": "E:\\VSProjects\\GEM\\GEM\\GEM\\GEM\\GEM.csproj",
-        "packagesPath": "C:\\Users\\tdvid\\.nuget\\packages\\",
-        "outputPath": "E:\\VSProjects\\GEM\\GEM\\GEM\\GEM\\obj\\",
+        "projectPath": "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM\\GEM.csproj",
+        "packagesPath": "C:\\Users\\takac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\tdvid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\takac\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -48,13 +48,17 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[1.5.3.2, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.495, )"
+              "version": "[4.6.0.800, )"
             }
           },
           "imports": [

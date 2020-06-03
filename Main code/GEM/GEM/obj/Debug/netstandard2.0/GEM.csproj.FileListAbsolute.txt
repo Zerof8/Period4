@@ -16,3 +16,22 @@ E:\VSProjects\GEM\GEM\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page1.xaml.g.cs
 E:\VSProjects\GEM\GEM\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page2.xaml.g.cs
 E:\VSProjects\GEM\GEM\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page3.xaml.g.cs
 E:\VSProjects\GEM\GEM\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page4.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\bin\Debug\netstandard2.0\GEM.deps.json
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\bin\Debug\netstandard2.0\GEM.dll
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\bin\Debug\netstandard2.0\ref\GEM.dll
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\bin\Debug\netstandard2.0\GEM.pdb
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.csprojAssemblyReference.cache
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page1.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page2.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page3.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\Page4.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.AssemblyInfoInputs.cache
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.AssemblyInfo.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.dll
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\ref\GEM.dll
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.pdb
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\cameraPage.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.csproj.CoreCompileInputs.cache
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\XamlC.stamp

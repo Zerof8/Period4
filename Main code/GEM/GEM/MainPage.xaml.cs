@@ -19,6 +19,11 @@ namespace GEM
         {
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            On<Android>().SetBarItemColor(Color.Black);
+            On<Android>().SetBarSelectedItemColor(Color.ForestGreen);
+
+            //Set bar colour
+            BarBackgroundColor = Color.FromHex("#C0C0C0");
         }
     }
 }

@@ -6,11 +6,13 @@
              mc:Ignorable="d"
              x:Class="GEM.MainPage">
 
+
     <TabbedPage.Children>
-        <pages:Page1 Title="page1"/>
-        <pages:Page2 Title="page2"/>
-        <pages:Page3 Title="page3"/>
-        <pages:Page4 Title="page4"/>
+        <pages:Page1 Icon="FridgeIcon.png"/>
+        <pages:Page2 Icon="AddlistIcon.png"/>
+        <pages:cameraPage Icon="CameraIcon.png"/>
+        <pages:Page3 Icon="Icons.png"/>
+        <pages:Page4 Icon="GemIcon.png"/>
     </TabbedPage.Children>
 
 </TabbedPage>

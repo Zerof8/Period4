@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"GEM.Android.dll",
 		"FormsViewGroup.dll",
 		"GEM.dll",
+		"Plugin.Media.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
