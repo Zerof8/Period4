@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pages="clr-namespace:GEM.Pages"
+             mc:Ignorable="d"
+             x:Class="GEM.MainPage">
+
+    <TabbedPage.Children>
+        <pages:Page1 Title="page1"/>
+        <pages:Page2 Title="page2"/>
+        <pages:Page3 Title="page3"/>
+        <pages:Page4 Title="page4"/>
+    </TabbedPage.Children>
+
+</TabbedPage>
