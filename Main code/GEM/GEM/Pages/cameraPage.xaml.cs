@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace GEM.Pages
 {
@@ -21,30 +22,18 @@ namespace GEM.Pages
             InitializeComponent();
         }
 
-
-        private async void ScanProduct_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
-
-            if (!CrossMedia.Current.IsCameraAvailable
-                || !CrossMedia.Current.IsTakePhotoSupported)
+            var scan = new ZXingScannerPage();
+            await Navigation.PushAsync(scan);
+            scan.OnScanResult += (result) =>
             {
-                await DisplayAlert("No camera", "No camera found.", "ok");
-                return;
-            }
-
-            var file = await CrossMedia.Current.TakePhotoAsync(
-                new StoreCameraMediaOptions
+                Device.BeginInvokeOnMainThread(async () =>
                 {
-                    SaveToAlbum = true
+                    await Navigation.PopAsync();
+                    mycode.Text = result.Text;
                 });
-
-            if (file == null)
-            {
-                return;
-            }
-
-            
+            };
         }
     }
 }

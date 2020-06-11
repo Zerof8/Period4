@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WdgPmsHvjR+rJUkgoIrhRe+rJn5pZubU5rNZM1fLlXaOKToo2snQiOw9gV6HtKiWt+NuOVczPLQRP5D6h8gvTA==",
+  "dgSpecHash": "pKLb8FHrmVwSWeVb6BK0Uu0QIfKr7G1Yuw/cQLvLyxhxUXlhijIcvpDj4i3Ue/IadxQ7F2io8GLJ0jlFKv+v9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM.Android\\GEM.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\takac\\.nuget\\packages\\fastandroidcamera\\2.0.0\\fastandroidcamera.2.0.0.nupkg.sha512",
     "C:\\Users\\takac\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
@@ -43,7 +44,19 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\takac\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\takac\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512"
+    "C:\\Users\\takac\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512",
+    "C:\\Users\\takac\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 4.6.0.847 to 4.6.0.800. Reference the package directly from the project to select a different version. \r\n GEM.Android -> GEM -> Xamarin.Forms (>= 4.6.0.847) \r\n GEM.Android -> Xamarin.Forms (>= 4.6.0.800)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    }
+  ]
 }

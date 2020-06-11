@@ -7,7 +7,8 @@
              x:Class="GEM.Pages.cameraPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Scan product!" Clicked="ScanProduct_Clicked"/>
+            <Button Text="Scan" Clicked="Button_Clicked"/>
+            <Label Text="" x:Name="mycode"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
