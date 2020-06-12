@@ -20,6 +20,10 @@ namespace GEM.Pages
         public cameraPage()
         {
             InitializeComponent();
+
+            //Connect to database and fill the dropdown with possible values
+            //compartmentPicker.Items.Add("hi");
+
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

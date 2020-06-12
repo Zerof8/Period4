@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pKLb8FHrmVwSWeVb6BK0Uu0QIfKr7G1Yuw/cQLvLyxhxUXlhijIcvpDj4i3Ue/IadxQ7F2io8GLJ0jlFKv+v9w==",
+  "dgSpecHash": "49L+q6VzxpZJsJ7azrN9XXdsh/hNxJHxm1AD8yvTMkVJv9Zwcz6s2RrzGcOdT4TV7R2tiHRnO4a/6U3xXCtlPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\takac\\OneDrive\\Documents\\GitHub\\Period4\\Main code\\GEM\\GEM.Android\\GEM.Android.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,7 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\takac\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\takac\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512",
+    "C:\\Users\\takac\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
     "C:\\Users\\takac\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],
   "logs": [

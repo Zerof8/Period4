@@ -7,7 +7,20 @@
              x:Class="GEM.Pages.cameraPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Scan" Clicked="Button_Clicked"/>
+            <Picker x:Name="compartmentPicker" 
+                    Title="Select compartment"
+                    TitleColor="Black"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#C0C0C0">
+            </Picker>
+
+            <Button Text="Scan" 
+                    Clicked="Button_Clicked"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"/>
             <Label Text="" x:Name="mycode"/>
         </StackLayout>
     </ContentPage.Content>

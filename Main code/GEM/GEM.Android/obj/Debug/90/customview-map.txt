@@ -26,6 +26,8 @@ external-path;C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\lp\41\jl\res\layout\bottomtablayout.xml
+FrameLayout;C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\lp\44\jl\res\layout\zxingscanneractivitylayout.xml
+FrameLayout;C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\lp\44\jl\res\layout\zxingscannerfragmentlayout.xml
 item;C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\lp\41\jl\res\values\styles.xml
 item;obj\Debug\90\res\values\styles.xml
 LinearLayout;C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\lp\41\jl\res\layout\bottomtablayout.xml
