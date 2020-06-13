@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GEM.Data;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,6 +7,8 @@ namespace GEM
 {
     public partial class App : Application
     {
+        static ProductDatabaseController productDatabase;
+
         public App()
         {
             InitializeComponent();
@@ -23,6 +26,18 @@ namespace GEM
 
         protected override void OnResume()
         {
+        }
+
+        public static ProductDatabaseController ProductDatabase
+        {
+            get
+            {
+                if (productDatabase == null)
+                {
+                    productDatabase = new ProductDatabaseController();
+                }
+                return productDatabase;
+            }
         }
     }
 }

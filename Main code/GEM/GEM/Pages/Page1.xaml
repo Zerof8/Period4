@@ -7,9 +7,21 @@
              x:Class="GEM.Pages.Page1">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is page 1"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="allProducts">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
+                                    <Label HorizontalOptions="Start"
+                                           VerticalTextAlignment="Center"
+                                           Text="{Binding barCode}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
