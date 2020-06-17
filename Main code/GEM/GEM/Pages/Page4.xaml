@@ -7,9 +7,43 @@
              x:Class="GEM.Pages.Page4">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is page 4"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="barCode"
+                   Text=""
+                   Placeholder="Barcode"
+                   IsReadOnly="False"
+                   TextChanged="OnTextChanged"/>
+            <Entry x:Name="name"
+                   Text=""
+                   Placeholder="Product name"
+                   IsReadOnly="False"/>
+            <Picker x:Name="foodTypePicker" 
+                    Title="Select category"
+                    TitleColor="Black"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#C0C0C0"
+                    IsEnabled="True">
+            </Picker>
+            <Entry x:Name="amount"
+                   Text=""
+                   Placeholder="F.e 250g, 1.5l etc"
+                   IsReadOnly="False"/>
+            <Label Text="Production or buy date"/>
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        x:Name="startTime">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+            <Label Text="Expiration date"/>
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        x:Name="expDate">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+            <Button Text="Add Product" 
+                    Clicked="addProduct_Clicked"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

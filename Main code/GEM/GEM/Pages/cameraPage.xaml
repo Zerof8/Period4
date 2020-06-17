@@ -12,8 +12,8 @@
                     TitleColor="Black"
                     Margin="15"
                     HorizontalOptions="FillAndExpand"
-                    BackgroundColor="#C0C0C0">
-            </Picker>
+                    BackgroundColor="#C0C0C0"/>
+
             <Button Text="Scan" 
                     Clicked="Button_Clicked"
                     CornerRadius="5"

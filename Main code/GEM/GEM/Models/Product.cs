@@ -11,17 +11,18 @@ namespace GEM.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string barCode { get; set; }
+        public string productName { get; set; }
         public string category { get; set; }
-        public int amount { get; set; }
+        public string amount { get; set; }
         public string calculatedExpDate { get; set; }
 
         public Product() { }
-        public Product(string barCode, string category, int amount, string calculatedExpDate)
+        public Product(string barCode, string productName, string category, string amount)
         {
             this.barCode = barCode;
+            this.productName = productName;
             this.category = category;
             this.amount = amount;
-            this.calculatedExpDate = calculatedExpDate;
         }
     }
 }

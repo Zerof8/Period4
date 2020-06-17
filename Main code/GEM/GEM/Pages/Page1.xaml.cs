@@ -25,12 +25,15 @@ namespace GEM.Pages
         {
             var enumerator = App.ProductDatabase.GetProducts();
 
-            while (enumerator.MoveNext())
+            if (enumerator != null)
             {
-                this.items.Add(enumerator.Current);
-            }
-            allProducts.ItemsSource = items;
-        }
+                while (enumerator.MoveNext())
+                {
+                    this.items.Add(enumerator.Current);
+                }
 
+                allProducts.ItemsSource = items;
+            }
+        }
     }
 }

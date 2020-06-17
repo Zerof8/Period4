@@ -8,6 +8,9 @@ namespace GEM
     public partial class App : Application
     {
         static ProductDatabaseController productDatabase;
+        static ListsDatabaseController listsDatabase;
+        static CategoryDatabaseController categoryDatabase;
+        static ExpirationDateDatabaseController expirationDateDatabase;
 
         public App()
         {
@@ -37,6 +40,44 @@ namespace GEM
                     productDatabase = new ProductDatabaseController();
                 }
                 return productDatabase;
+            }
+        }
+
+        public static CategoryDatabaseController CategoryDatabase
+        {
+            get
+            {
+                if (categoryDatabase == null)
+                {
+                    categoryDatabase = new CategoryDatabaseController();
+                }
+
+                return categoryDatabase;
+            }
+        }
+
+        public static ListsDatabaseController ListsDatabase
+        {
+            get
+            {
+                if (listsDatabase == null)
+                {
+                    listsDatabase = new ListsDatabaseController();
+                }
+                return listsDatabase;
+            }
+        }
+
+        public static ExpirationDateDatabaseController ExpiratonDateDatabase
+        {
+            get
+            {
+                if (expirationDateDatabase == null)
+                {
+                    expirationDateDatabase = new ExpirationDateDatabaseController();
+                }
+
+                return expirationDateDatabase;
             }
         }
     }

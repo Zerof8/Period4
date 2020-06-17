@@ -7,9 +7,21 @@
              x:Class="GEM.Pages.Page2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is page 2"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Picker x:Name="categoryPicker" 
+                    Title="Select category"
+                    TitleColor="Black"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#C0C0C0">
+            </Picker>
+            <Entry x:Name="ListName"/>
+            <Button Text="Add List" 
+                    Clicked="AddList_Clicked"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"/>
+            <Label Text="" x:Name="mycode"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

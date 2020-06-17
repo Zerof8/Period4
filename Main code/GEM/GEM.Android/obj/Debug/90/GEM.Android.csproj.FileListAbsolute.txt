@@ -999,3 +999,4 @@ C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\D
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\android\assets\System.Buffers.dll
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\android\assets\System.Memory.dll
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\icon.ico

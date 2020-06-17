@@ -15,7 +15,7 @@
                                 <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
                                     <Label HorizontalOptions="Start"
                                            VerticalTextAlignment="Center"
-                                           Text="{Binding barCode}"/>
+                                           Text="{Binding ProductName}"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

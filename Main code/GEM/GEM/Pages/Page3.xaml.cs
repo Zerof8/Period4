@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GEM.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,36 @@ namespace GEM.Pages
         public Page3()
         {
             InitializeComponent();
+        }
+
+        private async void Delete_Clicked(object sender, EventArgs e)
+        {
+            bool answer = await DisplayAlert("Delete?", "This will delete all data!", "Ok", "Cancel");
+
+            if (answer)
+            {
+                int i = App.ListsDatabase.DeleteListsData();
+                int k = App.ProductDatabase.DeleteProductsData();
+
+                if (i != 0)
+                {
+                    DisplayAlert("Lists", "All lists were deleted", "Ok");
+                }
+                else
+                {
+                    DisplayAlert("Lists", "No list were deleted", "Ok");
+                }
+
+                if (k != 0)
+                {
+                    DisplayAlert("Products", "All products were deleted", "Ok");
+                }
+                else
+                {
+                    DisplayAlert("Products", "No products were deleted", "Ok");
+                }
+            }
+            
         }
     }
 }

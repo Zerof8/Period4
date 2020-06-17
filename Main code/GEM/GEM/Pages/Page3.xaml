@@ -7,9 +7,8 @@
              x:Class="GEM.Pages.Page3">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is page 3"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Reset app"
+                    Clicked="Delete_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
