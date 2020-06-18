@@ -50,6 +50,7 @@ namespace GEM.Pages
 
             if (output.Any())
             {
+                
                 string productName = output[0].productName;
                 string category = output[0].category;
                 string amountProduct = output[0].amount;

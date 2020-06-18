@@ -7,20 +7,57 @@
              x:Class="GEM.Pages.cameraPage">
     <ContentPage.Content>
         <StackLayout>
-            <Picker x:Name="compartmentPicker" 
-                    Title="Select compartment"
-                    TitleColor="Black"
-                    Margin="15"
-                    HorizontalOptions="FillAndExpand"
-                    BackgroundColor="#C0C0C0"/>
-
-            <Button Text="Scan" 
+            <Entry x:Name="barCode"
+                   Placeholder="enter barcode"
+                   TextChanged="OnTextChanged"/>
+            <Label x:Name="productNameText"/>
+            <Button Text="Scan"
+                    x:Name="scanButton"
                     Clicked="Button_Clicked"
                     CornerRadius="5"
                     Margin="15"
                     BackgroundColor="#C0C0C0"
                     HorizontalOptions="Center"/>
-            <Label Text="" x:Name="mycode"/>
+            <Picker x:Name="compartmentPicker" 
+                    Title="Select compartment"
+                    TitleColor="Black"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#C0C0C0"
+                    SelectedIndexChanged="Selected_Changed"
+                    IsVisible="false"/>
+            <Label Text="Production or buy date" 
+                   x:Name="hidden1"
+                   IsVisible="false"/>
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        x:Name="startTime"
+                        IsVisible="false">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+            <Label Text="Expiration date"
+                   x:Name="hidden4"
+                   IsVisible="false"/>
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        x:Name="expDate"
+                        IsVisible="false">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+            <Button Text="Cancel"
+                    Clicked="Cancel_Clicked"
+                    x:Name="hidden2"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"
+                    IsVisible="false"/>
+            <Button Text="Add Product"
+                    Clicked="AddProduct_Clicked"
+                    x:Name="hidden3"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"
+                    IsVisible="false"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

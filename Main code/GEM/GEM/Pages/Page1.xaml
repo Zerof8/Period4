@@ -15,13 +15,14 @@
                                 <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
                                     <Label HorizontalOptions="Start"
                                            VerticalTextAlignment="Center"
-                                           Text="{Binding ProductName}"/>
+                                           Text="{Binding productName}"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Label Text="Warning: product still in production"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

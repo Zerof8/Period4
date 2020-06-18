@@ -11,6 +11,7 @@ namespace GEM
         static ListsDatabaseController listsDatabase;
         static CategoryDatabaseController categoryDatabase;
         static ExpirationDateDatabaseController expirationDateDatabase;
+        static ProductListDatabaseController productListDatabase;
 
         public App()
         {
@@ -78,6 +79,19 @@ namespace GEM
                 }
 
                 return expirationDateDatabase;
+            }
+        }
+
+        public static ProductListDatabaseController ProductListDatabase
+        {
+            get
+            {
+                if (productListDatabase == null)
+                {
+                    productListDatabase = new ProductListDatabaseController();
+                }
+
+                return productListDatabase;
             }
         }
     }

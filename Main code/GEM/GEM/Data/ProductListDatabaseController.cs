@@ -57,14 +57,14 @@ namespace GEM.Data
         {
             lock (locker)
             {
-                if (productList.BarCode != null && productList.ListId != 0)
+                if (productList.ProductListId != 0)
                 {
                     database.Update(productList);
                     return productList.ListId;
                 }
                 else
                 {
-                    return database.Insert(productList.BarCode);
+                    return database.Insert(productList);
                 }
             }
         }

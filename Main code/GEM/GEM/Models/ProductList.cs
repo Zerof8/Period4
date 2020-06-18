@@ -9,6 +9,7 @@ namespace GEM.Models
     public class ProductList
     {
         [PrimaryKey, AutoIncrement]
+        public int ProductListId { get; set; }
         public string BarCode { get; set; }
         public int ListId { get; set; }
         public double Price { get; set; }
