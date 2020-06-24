@@ -12,6 +12,7 @@ namespace GEM
         static CategoryDatabaseController categoryDatabase;
         static ExpirationDateDatabaseController expirationDateDatabase;
         static ProductListDatabaseController productListDatabase;
+        static QueryForAllDatabaseController queryForAllDatabase;
 
         public App()
         {
@@ -92,6 +93,19 @@ namespace GEM
                 }
 
                 return productListDatabase;
+            }
+        }
+
+        public static QueryForAllDatabaseController QueryForAllDatabase
+        {
+            get
+            {
+                if (queryForAllDatabase == null)
+                {
+                    queryForAllDatabase = new QueryForAllDatabaseController();
+                }
+
+                return queryForAllDatabase;
             }
         }
     }

@@ -37,7 +37,7 @@ namespace GEM.Data
 
         public List<Lists> GetListsPerUser(int i)
         {
-            var output = database.Query<Lists>("SELECT ListName, ListCategory " +
+            var output = database.Query<Lists>("SELECT ListId, ListName, ListCategory " +
                                                "FROM Lists " +
                                                "WHERE UserId = ?", i);
             return output;

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,18 +22,41 @@ namespace GEM.Pages
             Init();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Init();
+        }
+
         public void Init()
         {
-            var enumerator = App.ProductDatabase.GetProducts();
+            var output = App.QueryForAllDatabase.GetAllProductsPerUser();
 
-            if (enumerator != null)
+            if (output.Any())
             {
-                while (enumerator.MoveNext())
-                {
-                    this.items.Add(enumerator.Current);
-                }
+                allProducts.ItemsSource = output;
+            }
+            else
+            {
+                allProducts.ItemsSource = null;
+            }
+        }
 
-                allProducts.ItemsSource = items;
+        public void TapGestureRecognizer_Tap_Remove(object sender, EventArgs e)
+        {
+            
+
+            var something = sender as Image;
+            var what = something.BindingContext as QueryForAll;
+
+            if (App.ProductListDatabase.DeleteProduct(what.ListId, what.BarCode) == 1)
+            {
+                DisplayAlert("Alert", "Product deleted successfully", "Ok");
+                Init();
+            }
+            else
+            {
+                DisplayAlert("Alert", "Product was not deleted", "Ok");
             }
         }
     }

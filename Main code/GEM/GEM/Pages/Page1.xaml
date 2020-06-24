@@ -6,23 +6,48 @@
              mc:Ignorable="d"
              x:Class="GEM.Pages.Page1">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
             <ListView x:Name="allProducts">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
-                                    <Label HorizontalOptions="Start"
-                                           VerticalTextAlignment="Center"
-                                           Text="{Binding productName}"/>
-                                </StackLayout>
-                            </ViewCell.View>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding FilePath}" Grid.Column="0"></Image>
+
+                                <Label Text="{Binding ProductName}"
+                                FontSize="Medium"
+                                FontAttributes="Bold"
+                                Grid.Column="1" 
+                                VerticalTextAlignment="Start"></Label>
+                                <Label Text="Quantity:" 
+                                FontAttributes="Bold"
+                                Grid.Column="2" VerticalTextAlignment="Start"></Label>
+                                <Label Text="{Binding Quantity}" Grid.Column="2" VerticalTextAlignment="End"></Label>
+
+                                <Image Source="delete.png" Grid.Column="3">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="TapGestureRecognizer_Tap_Remove"
+                                        CommandParameter=""/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <Label Text="{Binding BarCode}" x:Name="barcode" IsVisible="false"/>
+                                <Label Text="{Binding ListId}" x:Name="ListId" IsVisible="false"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="Warning: product still in production"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

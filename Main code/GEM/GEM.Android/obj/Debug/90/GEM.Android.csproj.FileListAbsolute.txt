@@ -1000,3 +1000,10 @@ C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\D
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\android\assets\System.Memory.dll
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\android\assets\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\icon.ico
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\dairies.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\drinks.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\fruit.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\meat.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\nuts.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\misc.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\delete.png

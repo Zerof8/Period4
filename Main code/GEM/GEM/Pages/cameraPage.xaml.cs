@@ -25,6 +25,12 @@ namespace GEM.Pages
         public cameraPage()
         {
             InitializeComponent();
+
+            for (int i = 1; i <= 20; i++)
+            {
+                quantity.Items.Add(i.ToString());
+            }
+            quantity.SelectedIndex = 0;
         }
 
         protected override void OnAppearing()
@@ -53,10 +59,27 @@ namespace GEM.Pages
 
         private void Selected_Changed(object sender, EventArgs e)
         {
-            string listname = compartmentPicker.SelectedItem.ToString();
+            string listname;
+
+            try
+            {
+                listname = compartmentPicker.SelectedItem.ToString();
+            }
+            catch(System.NullReferenceException)
+            {
+                listname = "";
+            }
+
             var output = App.ListsDatabase.GetListId(1, listname);
 
-            selectedListId = output[0].ListId;
+            try
+            {
+                selectedListId = output[0].ListId;
+            }
+            catch(System.ArgumentOutOfRangeException)
+            {
+
+            }
         }
         private void OnTextChanged(object sender, EventArgs e)
         {
@@ -68,53 +91,81 @@ namespace GEM.Pages
                 string productName = output[0].productName;
                 productNameText.Text = productName;
 
-                openFunctions();
+                openFunctions1();
             }
             else
             {
                 productNameText.Text = "No such product found";
-                closeFunctions();
+                closeFunctions1();
             }
         }
 
-        private void openFunctions()
+        private void openFunctions1()
         {
             scanButton.IsVisible = false;
             compartmentPicker.IsVisible = true;
-            hidden1.IsVisible = true;
-            hidden2.IsVisible = true;
-            hidden3.IsVisible = true;
-            hidden4.IsVisible = true;
-            startTime.IsVisible = true;
-            expDate.IsVisible = true;
-
+            mySwitch.IsVisible = true;
+            cancelButton.IsVisible = true;
+            addButton.IsVisible = true;
         }
 
-        private void closeFunctions()
+        private void openFunctions2()
+        {
+            //prodLabel.IsVisible = true;
+            expLabel.IsVisible = true;
+            quantity.IsVisible = true;
+            expLabel.IsVisible = true;
+            //startTime.IsVisible = true;
+            expDate.IsVisible = true;
+        }
+
+        private void closeFunctions1()
         {
             scanButton.IsVisible = true;
             compartmentPicker.IsVisible = false;
-            hidden1.IsVisible = false;
-            hidden2.IsVisible = false;
-            hidden3.IsVisible = false;
-            hidden4.IsVisible = false;
-            startTime.IsVisible = false;
+            mySwitch.IsVisible = false;
+            mySwitch.IsToggled = false;
+            cancelButton.IsVisible = false;
+            addButton.IsVisible = false;
+        }
+
+        private void closeFunctions2()
+        {
+            //prodLabel.IsVisible = false;
+            expLabel.IsVisible = false;
+            quantity.IsVisible = false;
+            expLabel.IsVisible = false;
+            //startTime.IsVisible = false;
             expDate.IsVisible = false;
         }
 
         private void Cancel_Clicked(object sender, EventArgs e)
         {
-            productNameText.Text = "";
+            barCode.Text = "";
+        }
+
+        private void switch_Toggled(object sender, EventArgs e)
+        {
+            if(mySwitch.IsToggled)
+            {
+                openFunctions2();
+            }
+            else
+            {
+                closeFunctions2();
+            }
         }
 
         private void AddProduct_Clicked(object sender, EventArgs e)
         {
             string BarCode = barCode.Text;
             int ListId = selectedListId;
-            DateTime StartDate = startTime.Date;
+            
+            int Quantity = Int32.Parse(quantity.SelectedItem.ToString());
+            DateTime StartDate = DateTime.Now;
             DateTime ExpDate = expDate.Date;
 
-            if (App.ProductListDatabase.SaveProductLists(new ProductList(BarCode, ListId, 10.0, 6, StartDate, ExpDate)) == 1)
+            if (App.ProductListDatabase.SaveProductLists(new ProductList(BarCode, ListId, 10.0, Quantity, StartDate, ExpDate)) == 1)
             {
                 DisplayAlert("Alert", "The product was added to your list", "Ok");
             }
@@ -122,14 +173,6 @@ namespace GEM.Pages
             {
                 DisplayAlert("Alert", "The product was not added to your list", "Ok");
             }
-
-            //Add quantity and price
-            /* this.BarCode = BarCode;
-             this.ListId = ListId;
-             this.Price = Price;
-             this.Quantity = Quantity;
-             this.BuyDate = BuyDate;
-             this.ExpDate = ExpDate;*/
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

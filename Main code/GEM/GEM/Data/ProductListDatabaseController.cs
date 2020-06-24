@@ -71,11 +71,19 @@ namespace GEM.Data
 
         public int DeleteProduct(int ListId, string barcode)
         {
-            object[] list = new object[2];
-            list[0] = ListId;
-            list[1] = barcode;
+            SQLiteCommand comm = database.CreateCommand("DELETE from ProductList " +
+                                                        "WHERE ListId = ? " +
+                                                        "AND BarCode = ?", ListId, barcode);
 
-            SQLiteCommand comm = database.CreateCommand("DELETE from ProductList WHERE id = ? AND BarCode = ?", list);
+            lock (locker)
+            {
+                return comm.ExecuteNonQuery();
+            }
+        }
+
+        public int DeleteProductListData()
+        {
+            SQLiteCommand comm = database.CreateCommand("DELETE from ProductList");
 
             lock (locker)
             {

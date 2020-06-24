@@ -26,6 +26,8 @@ namespace GEM.Pages
             {
                 int i = App.ListsDatabase.DeleteListsData();
                 int k = App.ProductDatabase.DeleteProductsData();
+                int j = App.ProductListDatabase.DeleteProductListData();
+                int l = App.CategoryDatabase.DeleteCategories();
 
                 if (i != 0)
                 {
@@ -43,6 +45,24 @@ namespace GEM.Pages
                 else
                 {
                     DisplayAlert("Products", "No products were deleted", "Ok");
+                }
+
+                if (j != 0)
+                {
+                    DisplayAlert("Products", "All productlists were deleted", "Ok");
+                }
+                else
+                {
+                    DisplayAlert("Products", "No productlists were deleted", "Ok");
+                }
+
+                if (l != 0)
+                {
+                    DisplayAlert("Products", "All categories were deleted", "Ok");
+                }
+                else
+                {
+                    DisplayAlert("Products", "No categories were deleted", "Ok");
                 }
             }
             

@@ -17,12 +17,18 @@ namespace GEM.Pages
         {
             InitializeComponent();
             Init();
+        }
 
-            //startTime.Date = DateTime.Now;
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Init();
         }
 
         public void Init()
         {
+            foodTypePicker.Items.Clear();
+
             var enumerator = App.CategoryDatabase.GetCategories();
 
             if (enumerator != null)
@@ -39,8 +45,7 @@ namespace GEM.Pages
                 App.CategoryDatabase.SaveProductLists(new Category("Vegetables & fruit", "fruit.png"));
                 App.CategoryDatabase.SaveProductLists(new Category("Drinks", "drinks.png"));
                 App.CategoryDatabase.SaveProductLists(new Category("Nuts & grains", "nuts.png"));
-                App.CategoryDatabase.SaveProductLists(new Category("Pastries", "pastries.png"));
-                App.CategoryDatabase.SaveProductLists(new Category("Sweets", "sweets.png"));
+                App.CategoryDatabase.SaveProductLists(new Category("Miscellaneous ", "misc.png"));
             }
         }
 
@@ -86,10 +91,12 @@ namespace GEM.Pages
             {
                 string productName = name.Text;
                 string amountDb = amount.Text;
-                string category =  foodTypePicker.SelectedItem.ToString();
-
-                if (barCodeDb != null && productName != null && amountDb != null && category != null)
+                string category;
+                
+                if (!String.IsNullOrEmpty(barCodeDb) && !String.IsNullOrEmpty(productName) && !String.IsNullOrEmpty(amountDb) && foodTypePicker.SelectedIndex != -1)
                 {
+                    category = foodTypePicker.SelectedItem.ToString();
+
                     if (App.ProductDatabase.SaveProduct(new Product(barCodeDb, productName, category, amountDb)) == 1)
                     {
                         DisplayAlert("Alert", "Product saved", "Ok");
@@ -106,7 +113,7 @@ namespace GEM.Pages
                 
             }
             
-            if (barCodeDb != null)
+            if (!String.IsNullOrEmpty(barCodeDb))
             {
                 if (ExpDate > StartDate)
                 {

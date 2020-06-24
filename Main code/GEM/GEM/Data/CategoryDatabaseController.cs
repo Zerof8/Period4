@@ -66,5 +66,18 @@ namespace GEM.Data
                 }
             }
         }
+
+        public int DeleteCategories()
+        {
+            lock (locker)
+            {
+                SQLiteCommand comm = database.CreateCommand("DELETE from Category");
+
+                lock (locker)
+                {
+                    return comm.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
