@@ -28,6 +28,7 @@ namespace GEM.Pages
                 int k = App.ProductDatabase.DeleteProductsData();
                 int j = App.ProductListDatabase.DeleteProductListData();
                 int l = App.CategoryDatabase.DeleteCategories();
+                App.ExpiratonDateDatabase.DeleteExpDates();
 
                 if (i != 0)
                 {

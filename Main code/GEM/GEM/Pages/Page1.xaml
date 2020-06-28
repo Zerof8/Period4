@@ -7,7 +7,7 @@
              x:Class="GEM.Pages.Page1">
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
-            <ListView x:Name="allProducts">
+            <ListView x:Name="allProducts" ItemTapped="item_tapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -14,12 +14,18 @@ namespace GEM.Models
         public string productName { get; set; }
         public string category { get; set; }
         public string amount { get; set; }
-        public string calculatedExpDate { get; set; }
 
         public Product() { }
         public Product(string barCode, string productName, string category, string amount)
         {
             this.barCode = barCode;
+            this.productName = productName;
+            this.category = category;
+            this.amount = amount;
+        }
+
+        public Product(string productName, string category, string amount)
+        {
             this.productName = productName;
             this.category = category;
             this.amount = amount;

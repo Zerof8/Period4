@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GEM.Pages.AddSelectedWB">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="compartmentPicker" 
+                    Title="Select compartment"
+                    TitleColor="Black"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#C0C0C0"
+                    SelectedIndexChanged="Selected_Changed">
+            </Picker>
+
+            <Switch x:Name="mySwitch" Toggled="switch_Toggled"/>
+
+            <Picker x:Name="quantity" IsVisible="false"/>
+            <Entry x:Name="price"
+                   Placeholder="Price"
+                   Keyboard="Numeric"
+                   IsVisible="false"/>
+
+            <Label Text="Expiration date"
+                   x:Name="expLabel"
+                   IsVisible="false"/>
+
+            <DatePicker VerticalOptions="CenterAndExpand"
+                        x:Name="expDate"
+                        IsVisible="false">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+
+            <Button Text="Add Product"
+                    Clicked="AddProduct_Clicked"
+                    x:Name="addButton"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

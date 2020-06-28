@@ -21,6 +21,7 @@ namespace GEM.Pages
     public partial class cameraPage : ContentPage
     {
         private int selectedListId;
+        private bool toggled = false;
 
         public cameraPage()
         {
@@ -41,7 +42,7 @@ namespace GEM.Pages
 
         public void Init()
         {
-            var output = App.ListsDatabase.GetListsPerUser(1);
+            var output = App.ListsDatabase.GetListsPerUser();
             compartmentPicker.Items.Clear();
 
             if (output.Any())
@@ -70,13 +71,20 @@ namespace GEM.Pages
                 listname = "";
             }
 
-            var output = App.ListsDatabase.GetListId(1, listname);
-
             try
             {
-                selectedListId = output[0].ListId;
+                var output = App.ListsDatabase.GetListId(listname);
+
+                try
+                {
+                    selectedListId = output[0].ListId;
+                }
+                catch (System.ArgumentOutOfRangeException)
+                {
+                    barCode.Text = "";
+                }
             }
-            catch(System.ArgumentOutOfRangeException)
+            catch(Exception ex)
             {
 
             }
@@ -103,6 +111,7 @@ namespace GEM.Pages
         private void openFunctions1()
         {
             scanButton.IsVisible = false;
+            productWB.IsVisible = false;
             compartmentPicker.IsVisible = true;
             mySwitch.IsVisible = true;
             cancelButton.IsVisible = true;
@@ -111,17 +120,17 @@ namespace GEM.Pages
 
         private void openFunctions2()
         {
-            //prodLabel.IsVisible = true;
             expLabel.IsVisible = true;
             quantity.IsVisible = true;
             expLabel.IsVisible = true;
-            //startTime.IsVisible = true;
             expDate.IsVisible = true;
+            price.IsVisible = true;
         }
 
         private void closeFunctions1()
         {
             scanButton.IsVisible = true;
+            productWB.IsVisible = true;
             compartmentPicker.IsVisible = false;
             mySwitch.IsVisible = false;
             mySwitch.IsToggled = false;
@@ -131,12 +140,11 @@ namespace GEM.Pages
 
         private void closeFunctions2()
         {
-            //prodLabel.IsVisible = false;
             expLabel.IsVisible = false;
             quantity.IsVisible = false;
             expLabel.IsVisible = false;
-            //startTime.IsVisible = false;
             expDate.IsVisible = false;
+            price.IsVisible = false;
         }
 
         private void Cancel_Clicked(object sender, EventArgs e)
@@ -149,10 +157,12 @@ namespace GEM.Pages
             if(mySwitch.IsToggled)
             {
                 openFunctions2();
+                toggled = true;
             }
             else
             {
                 closeFunctions2();
+                toggled = false;
             }
         }
 
@@ -160,19 +170,77 @@ namespace GEM.Pages
         {
             string BarCode = barCode.Text;
             int ListId = selectedListId;
-            
-            int Quantity = Int32.Parse(quantity.SelectedItem.ToString());
-            DateTime StartDate = DateTime.Now;
-            DateTime ExpDate = expDate.Date;
 
-            if (App.ProductListDatabase.SaveProductLists(new ProductList(BarCode, ListId, 10.0, Quantity, StartDate, ExpDate)) == 1)
+            int Quantity = Int32.Parse(quantity.SelectedItem.ToString());
+            bool parsed;
+            double PricePr;
+            DateTime StartDate = DateTime.Now;
+            DateTime ExpDate;
+
+            if (!String.IsNullOrEmpty(price.Text))
             {
-                DisplayAlert("Alert", "The product was added to your list", "Ok");
+                parsed = Double.TryParse(price.Text, out double pricePr);
+                PricePr = pricePr;
             }
             else
             {
-                DisplayAlert("Alert", "The product was not added to your list", "Ok");
+                parsed = true;
+                PricePr = 0;
             }
+
+            if (!toggled)
+            {
+                var output = App.ExpiratonDateDatabase.GetAverage(BarCode);
+
+                int[] average = new int[output.Count()];
+                int c = 0;
+
+                foreach (var current in output)
+                {
+                    int k = (current.ExpDate - current.StartDate).Days;
+                    average[c] = k;
+                    c++;
+                }
+
+                double avg = Queryable.Average(average.AsQueryable());
+                ExpDate = DateTime.Now.AddDays(avg);
+            }
+            else
+            {
+                ExpDate = expDate.Date;
+            }
+
+            
+            
+
+            if(parsed)
+            {
+                var check = App.ProductListDatabase.CheckForList(BarCode, ListId);
+
+                if (!check.Any())
+                {
+                    if (App.ProductListDatabase.SaveProductLists(new ProductList(BarCode, ListId, PricePr, Quantity, StartDate, ExpDate)) == 1)
+                    {
+                        DisplayAlert("Alert", "The product was added to your list", "Ok");
+                        barCode.Text = "";
+                        compartmentPicker.SelectedIndex = 0;
+                        price.Text = "";
+                    }
+                    else
+                    {
+                        DisplayAlert("Alert", "The product was not added to your list", "Ok");
+                    }
+                }
+                else
+                {
+                    App.ProductListDatabase.UpdateQuantity(check[0].Quantity, Quantity, BarCode, ListId, PricePr, ExpDate);
+                }
+            }
+            else
+            {
+                DisplayAlert("Alert", "Please enter a valid number", "Ok");
+            }
+            quantity.SelectedIndex = 0;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -188,7 +256,11 @@ namespace GEM.Pages
                     barCode.Text = result.Text;
                 });
             };
+        }
 
+        private async void ButtonWB_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddWBtoPL());
         }
     }
 }

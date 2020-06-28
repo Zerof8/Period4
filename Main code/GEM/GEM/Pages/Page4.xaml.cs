@@ -86,11 +86,12 @@ namespace GEM.Pages
             string barCodeDb = barCode.Text;
             DateTime StartDate = startTime.Date;
             DateTime ExpDate = expDate.Date;
+            string productName = name.Text;
+            string amountDb = amount.Text;
 
             if (!output.Any())
             {
-                string productName = name.Text;
-                string amountDb = amount.Text;
+                
                 string category;
                 
                 if (!String.IsNullOrEmpty(barCodeDb) && !String.IsNullOrEmpty(productName) && !String.IsNullOrEmpty(amountDb) && foodTypePicker.SelectedIndex != -1)
@@ -100,6 +101,7 @@ namespace GEM.Pages
                     if (App.ProductDatabase.SaveProduct(new Product(barCodeDb, productName, category, amountDb)) == 1)
                     {
                         DisplayAlert("Alert", "Product saved", "Ok");
+                        barCode.Text = "";
                     }
                     else
                     {
@@ -110,10 +112,9 @@ namespace GEM.Pages
                 {
                     DisplayAlert("Alert", "Please fill in everything!", "Ok");
                 }
-                
             }
             
-            if (!String.IsNullOrEmpty(barCodeDb))
+            if (!String.IsNullOrEmpty(barCodeDb) && !String.IsNullOrEmpty(productName) && !String.IsNullOrEmpty(amountDb) && foodTypePicker.SelectedIndex != -1)
             {
                 if (ExpDate > StartDate)
                 {

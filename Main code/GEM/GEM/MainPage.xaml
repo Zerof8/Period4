@@ -12,7 +12,7 @@
         <pages:Page2 Icon="AddlistIcon.png"/>
         <pages:cameraPage Icon="CameraIcon.png"/>
         <pages:Page3 Icon="Icons.png"/>
-        <pages:Page4 Icon="GemIcon.png"/>
+        <pages:Page5 Icon="GemIcon.png"/>
     </TabbedPage.Children>
 
 </TabbedPage>

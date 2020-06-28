@@ -1007,3 +1007,4 @@ C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\D
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\nuts.png
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\misc.png
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\delete.png
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM.Android\obj\Debug\90\res\drawable\manualadd.png

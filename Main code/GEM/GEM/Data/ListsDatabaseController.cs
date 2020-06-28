@@ -35,19 +35,18 @@ namespace GEM.Data
             }
         }
 
-        public List<Lists> GetListsPerUser(int i)
+        public List<Lists> GetListsPerUser()
         {
             var output = database.Query<Lists>("SELECT ListId, ListName, ListCategory " +
-                                               "FROM Lists " +
-                                               "WHERE UserId = ?", i);
+                                               "FROM Lists ");
             return output;
         }
 
-        public List<Lists> GetListId(int userId, string listName)
+        public List<Lists> GetListId(string listName)
         {
             var output = database.Query<Lists>("SELECT ListId " +
                                                "FROM Lists " +
-                                               "WHERE UserId = ? AND ListName = ?", userId, listName);
+                                               "WHERE ListName = ?", listName);
             return output;
         }
         

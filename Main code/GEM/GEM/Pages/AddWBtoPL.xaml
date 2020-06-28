@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GEM.Pages.AddWBtoPL">
+    <ContentPage.Content >
+        <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
+            <ListView x:Name="productsWB">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="6*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding FilePath}" Grid.Column="0"></Image>
+
+                                <Label Text="{Binding ProductName}"
+                                FontSize="Medium"
+                                FontAttributes="Bold"
+                                Grid.Column="1" 
+                                VerticalTextAlignment="Start"></Label>
+                                <Label Text="Amount:" 
+                                FontAttributes="Bold"
+                                Grid.Column="2" VerticalTextAlignment="Start"></Label>
+                                <Label Text="{Binding Amount}" Grid.Column="2" VerticalTextAlignment="End"></Label>
+
+                                <Image Source="manualAdd.png" Grid.Column="3">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="TapGestureRecognizer_Tap_Remove"
+                                        CommandParameter=""/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <Label Text="{Binding Id}" x:Name="barcode" IsVisible="false"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

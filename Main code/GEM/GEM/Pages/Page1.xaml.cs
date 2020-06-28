@@ -30,22 +30,27 @@ namespace GEM.Pages
 
         public void Init()
         {
-            var output = App.QueryForAllDatabase.GetAllProductsPerUser();
+            try
+            {
+                var output = App.QueryForAllDatabase.GetAllProductsPerUser();
 
-            if (output.Any())
-            {
-                allProducts.ItemsSource = output;
+                if (output.Any())
+                {
+                    allProducts.ItemsSource = output;
+                }
+                else
+                {
+                    allProducts.ItemsSource = null;
+                }
             }
-            else
+            catch(Exception e)
             {
-                allProducts.ItemsSource = null;
+                
             }
         }
 
         public void TapGestureRecognizer_Tap_Remove(object sender, EventArgs e)
         {
-            
-
             var something = sender as Image;
             var what = something.BindingContext as QueryForAll;
 
@@ -58,6 +63,12 @@ namespace GEM.Pages
             {
                 DisplayAlert("Alert", "Product was not deleted", "Ok");
             }
+        }
+
+        public void item_tapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            var myselectedItem = e.Item as QueryForAll;
+            Navigation.PushAsync(new MoreInf(myselectedItem.BarCode, myselectedItem.ListId));
         }
     }
 }

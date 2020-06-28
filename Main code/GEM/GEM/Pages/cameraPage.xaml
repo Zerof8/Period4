@@ -19,7 +19,15 @@
                     Margin="15"
                     BackgroundColor="#C0C0C0"
                     HorizontalOptions="Center"/>
-            
+
+            <Button Text="Product without barcode"
+                    x:Name="productWB"
+                    Clicked="ButtonWB_Clicked"
+                    CornerRadius="5"
+                    Margin="15"
+                    BackgroundColor="#C0C0C0"
+                    HorizontalOptions="Center"/>
+
             <Picker x:Name="compartmentPicker" 
                     Title="Select compartment"
                     TitleColor="Black"
@@ -30,9 +38,13 @@
                     IsVisible="false">
             </Picker>
 
-            <Picker x:Name="quantity" IsVisible="false"/>
-            
             <Switch x:Name="mySwitch" IsVisible="false" Toggled="switch_Toggled"/>
+            
+            <Picker x:Name="quantity" IsVisible="false"/>
+            <Entry x:Name="price"
+                   Placeholder="Price"
+                   Keyboard="Numeric"
+                   IsVisible="false"/>
 
             <Label Text="Expiration date"
                    x:Name="expLabel"

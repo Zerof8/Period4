@@ -67,9 +67,24 @@ namespace GEM.Data
             }
         }
 
+        public List<Product> GetProductsWB()
+        {
+            var output = database.Query<Product>("SELECT productName, Category " +
+                                               "FROM Product " +
+                                               "WHERE barCode IS NULL " +
+                                               "ORDER BY productName");
+            return output;
+        }
+
         public List<Product> SelectProduct(string BarCode)
         {
             var output = database.Query<Product>("SELECT productName, category, amount FROM Product WHERE barCode = ?", BarCode);
+            return output;
+        }
+
+        public List<Product> SelectProductWB(string Name)
+        {
+            var output = database.Query<Product>("SELECT  productName, category, amount FROM Product WHERE productName = ?", Name);
             return output;
         }
 

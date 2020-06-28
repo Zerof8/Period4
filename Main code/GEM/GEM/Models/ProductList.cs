@@ -17,6 +17,7 @@ namespace GEM.Models
         public DateTime BuyDate { get; set; }
         public DateTime ExpDate { get; set; }
 
+
         public ProductList() { }
         public ProductList(string BarCode, int ListId, double Price, int Quantity, DateTime BuyDate, DateTime ExpDate)
         {

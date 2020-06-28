@@ -35,3 +35,8 @@ C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\net
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\cameraPage.xaml.g.cs
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\GEM.csproj.CoreCompileInputs.cache
 C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\AddProduct.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\AddProductWB.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\AddWBtoPL.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\MoreInf.xaml.g.cs
+C:\Users\takac\OneDrive\Documents\GitHub\Period4\Main code\GEM\GEM\obj\Debug\netstandard2.0\Pages\AddSelectedWB.xaml.g.cs

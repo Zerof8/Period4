@@ -39,14 +39,30 @@ namespace GEM.Pages
                 }
                 else
                 {
-                    Lists newLists = new Lists()
-                    {
-                        UserId = 1,
-                        ListName = listName,
-                        ListCategory = category
-                    };
+                    var output = App.ListsDatabase.GetListId(listName);
 
-                    App.ListsDatabase.SaveLists(newLists);
+                    if (!output.Any())
+                    {
+                        Lists newLists = new Lists()
+                        {
+                            ListName = listName,
+                            ListCategory = category
+                        };
+
+                        if (App.ListsDatabase.SaveLists(newLists) == 1)
+                        {
+                            DisplayAlert("Alert", "List saved", "Ok");
+                            ListName.Text = "";
+                            categoryPicker.SelectedIndex = -1;
+                        }
+                    }
+                    else
+                    {
+                        DisplayAlert("Alert", "This name is already in use", "Ok");
+                        ListName.Text = "";
+                        categoryPicker.SelectedIndex = -1;
+                    }
+                    
                 }
             }
         }

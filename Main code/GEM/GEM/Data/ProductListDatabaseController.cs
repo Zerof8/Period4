@@ -53,6 +53,31 @@ namespace GEM.Data
             }    
         }
 
+        public List<ProductList> CheckForList(string barcode, int listid)
+        {
+            var output = database.Query<ProductList>("SELECT * " +
+                                               "FROM ProductList " +
+                                               "WHERE BarCode = ? AND ListId = ?", barcode, listid);
+            return output;
+        }
+
+        public int UpdateQuantity(int oldQuantity, int newQuantity, string barcode, int listid, double PricePr, DateTime ExpDate)
+        {
+            newQuantity = oldQuantity + newQuantity;
+
+            SQLiteCommand comm = database.CreateCommand("UPDATE ProductList " +
+                                                        "SET quantity = ?, " +
+                                                        "Price = ?, " +
+                                                        "ExpDate = ? " +
+                                                        "WHERE ListId = ? " +
+                                                        "AND BarCode = ?", newQuantity, PricePr, ExpDate, listid, barcode);
+
+            lock (locker)
+            {
+                return comm.ExecuteNonQuery();
+            }
+        }
+
         public int SaveProductLists(ProductList productList)
         {
             lock (locker)

@@ -53,6 +53,14 @@ namespace GEM.Data
             }    
         }
 
+        public List<ExpirationDate> GetAverage(string barCode)
+        {
+            var output = database.Query<ExpirationDate>("SELECT ExpDate, StartDate " +
+                                                        "FROM ExpirationDate " +
+                                                        "WHERE (ExpDate IS NOT NULL AND StartDate IS NOT NULL) " +
+                                                        "AND PrBarCode = ?", barCode);
+            return output;
+        }
         public int SaveExpirationDate(ExpirationDate expirationDate)
         {
             lock (locker)
@@ -66,6 +74,16 @@ namespace GEM.Data
                 {
                     return database.Insert(expirationDate);
                 }
+            }
+        }
+
+        public int DeleteExpDates()
+        {
+            SQLiteCommand comm = database.CreateCommand("DELETE from ExpirationDate");
+
+            lock (locker)
+            {
+                return comm.ExecuteNonQuery();
             }
         }
     }

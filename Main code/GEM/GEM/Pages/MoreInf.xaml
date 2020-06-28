@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GEM.Pages.MoreInf">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="FillAndExpand">
+            <Label HorizontalOptions="Center" x:Name="title" 
+                                            VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Center"
+                                            TextDecorations="Underline"
+                                            FontSize="Large"
+                                            Text=""/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Product"
+                                FontSize="Medium"
+                                FontAttributes="Bold"
+                                Grid.Column="0" 
+                                VerticalTextAlignment="Start"></Label>
+
+                <Label Text="Status"
+                                FontSize="Medium"
+                                FontAttributes="Bold"
+                                Grid.Column="1"></Label>
+            </Grid>
+
+            <Grid>
+                <Label Text="Category:" 
+                                Grid.Column="0" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="category" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
+                <Label Text="Purchase date:" Grid.Column="2" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="purchDate" Text="" Grid.Column="3" VerticalTextAlignment="Start"></Label>
+            </Grid>
+
+            <Grid>
+                <Label Text="Amount:" Grid.Column="0" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="amount" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
+                <Label Text="Expiration date:" Grid.Column="2" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="expDate" Text="" Grid.Column="3" VerticalTextAlignment="Start"></Label>
+            </Grid>
+
+            <Grid>
+                <Label Text="Location:" Grid.Column="0" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="location" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
+            </Grid>
+
+            <Grid>
+                <Frame
+                    x:Name="expBorder"
+                    CornerRadius="15"
+                Padding="0"
+                BackgroundColor="AntiqueWhite"
+                Margin="15,10,15,10" 
+                HasShadow="True">
+                    <Label Margin="5"
+                           x:Name="daysExp"
+                    HorizontalOptions="Center"
+                    Text="X Days" 
+                    Grid.Column="1"/>
+                </Frame>
+            </Grid>
+
+            <Grid>
+                <Label Text="Price:" Grid.Column="0" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="price" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
+            </Grid>
+
+            <Grid>
+                <Label Text="Quantity:" Grid.Column="0" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="quantity" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
+            </Grid>
+
+            <Grid>
+                <Label Text="Barcode:" Grid.Column="0" VerticalTextAlignment="Start"></Label>
+                <Label x:Name="barCode" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
