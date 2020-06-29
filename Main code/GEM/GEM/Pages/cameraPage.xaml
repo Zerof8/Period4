@@ -6,73 +6,75 @@
              mc:Ignorable="d"
              x:Class="GEM.Pages.cameraPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="barCode"
-                   Placeholder="enter barcode"
-                   TextChanged="OnTextChanged"/>
-            <Label x:Name="productNameText"/>
+        <ScrollView>
+            <StackLayout>
+                <Entry x:Name="barCode"
+                       Placeholder="enter barcode"
+                       TextChanged="OnTextChanged"/>
+                <Label x:Name="productNameText"/>
             
-            <Button Text="Scan"
-                    x:Name="scanButton"
-                    Clicked="Button_Clicked"
-                    CornerRadius="5"
-                    Margin="15"
-                    BackgroundColor="#C0C0C0"
-                    HorizontalOptions="Center"/>
+                <Button Text="Scan"
+                        x:Name="scanButton"
+                        Clicked="Button_Clicked"
+                        CornerRadius="5"
+                        Margin="15"
+                        BackgroundColor="#C0C0C0"
+                        HorizontalOptions="Center"/>
 
-            <Button Text="Product without barcode"
-                    x:Name="productWB"
-                    Clicked="ButtonWB_Clicked"
-                    CornerRadius="5"
-                    Margin="15"
-                    BackgroundColor="#C0C0C0"
-                    HorizontalOptions="Center"/>
+                <Button Text="Product without barcode"
+                        x:Name="productWB"
+                        Clicked="ButtonWB_Clicked"
+                        CornerRadius="5"
+                        Margin="15"
+                        BackgroundColor="#C0C0C0"
+                        HorizontalOptions="Center"/>
 
-            <Picker x:Name="compartmentPicker" 
-                    Title="Select compartment"
-                    TitleColor="Black"
-                    Margin="15"
-                    HorizontalOptions="FillAndExpand"
-                    BackgroundColor="#C0C0C0"
-                    SelectedIndexChanged="Selected_Changed"
-                    IsVisible="false">
-            </Picker>
-
-            <Switch x:Name="mySwitch" IsVisible="false" Toggled="switch_Toggled"/>
-            
-            <Picker x:Name="quantity" IsVisible="false"/>
-            <Entry x:Name="price"
-                   Placeholder="Price"
-                   Keyboard="Numeric"
-                   IsVisible="false"/>
-
-            <Label Text="Expiration date"
-                   x:Name="expLabel"
-                   IsVisible="false"/>
-            
-            <DatePicker VerticalOptions="CenterAndExpand"
-                        x:Name="expDate"
+                <Picker x:Name="compartmentPicker" 
+                        Title="Select compartment"
+                        TitleColor="Black"
+                        Margin="15"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="#C0C0C0"
+                        SelectedIndexChanged="Selected_Changed"
                         IsVisible="false">
-                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-            </DatePicker>
+                </Picker>
+
+                <Switch x:Name="mySwitch" IsVisible="false" Toggled="switch_Toggled"/>
             
-            <Button Text="Cancel"
-                    Clicked="Cancel_Clicked"
-                    x:Name="cancelButton"
-                    CornerRadius="5"
-                    Margin="15"
-                    BackgroundColor="#C0C0C0"
-                    HorizontalOptions="Center"
-                    IsVisible="false"/>
+                <Picker x:Name="quantity" IsVisible="false"/>
+                <Entry x:Name="price"
+                       Placeholder="Price"
+                       Keyboard="Numeric"
+                       IsVisible="false"/>
+
+                <Label Text="Expiration date"
+                       x:Name="expLabel"
+                       IsVisible="false"/>
             
-            <Button Text="Add Product"
-                    Clicked="AddProduct_Clicked"
-                    x:Name="addButton"
-                    CornerRadius="5"
-                    Margin="15"
-                    BackgroundColor="#C0C0C0"
-                    HorizontalOptions="Center"
-                    IsVisible="false"/>
-        </StackLayout>
+                <DatePicker VerticalOptions="CenterAndExpand"
+                            x:Name="expDate"
+                            IsVisible="false">
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                </DatePicker>
+            
+                <Button Text="Cancel"
+                        Clicked="Cancel_Clicked"
+                        x:Name="cancelButton"
+                        CornerRadius="5"
+                        Margin="15"
+                        BackgroundColor="#C0C0C0"
+                        HorizontalOptions="Center"
+                        IsVisible="false"/>
+
+                <Button Text="Add Product"
+                        Clicked="AddProduct_Clicked"
+                        x:Name="addButton"
+                        CornerRadius="5"
+                        Margin="15"
+                        BackgroundColor="#C0C0C0"
+                        HorizontalOptions="Center"
+                        IsVisible="false"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

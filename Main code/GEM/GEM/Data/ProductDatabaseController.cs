@@ -87,6 +87,11 @@ namespace GEM.Data
             var output = database.Query<Product>("SELECT  productName, category, amount FROM Product WHERE productName = ?", Name);
             return output;
         }
+        public List<Product> SelectProductWBwithId(string Name)
+        {
+            var output = database.Query<Product>("SELECT  productName, category, amount FROM Product WHERE Id = ?", Name);
+            return output;
+        }
 
         public int DeleteProduct(int id)
         {

@@ -19,6 +19,7 @@ namespace GEM.Pages
         public AddSelectedWB(int productId)
         {
             InitializeComponent();
+            this.productId = productId;
             Init();
 
             for (int i = 1; i <= 20; i++)
@@ -27,7 +28,7 @@ namespace GEM.Pages
             }
             quantity.SelectedIndex = 0;
 
-            this.productId = productId;
+            
         }
         public void Init()
         {
@@ -41,10 +42,26 @@ namespace GEM.Pages
                     compartmentPicker.Items.Add(output[i].ListName);
                 }
             }
-            else
+
+            string barCode = this.productId.ToString();
+            var product = App.ProductDatabase.SelectProductWBwithId(barCode);
+
+            DateTime ExpDate;
+            var averages = App.ExpiratonDateDatabase.GetAverage(product[0].productName);
+
+            int[] average = new int[output.Count()];
+            int c = 0;
+
+            foreach (var current in averages)
             {
-                DisplayAlert("Alert", "there are no lists for this user", "ok");
+                int k = (current.ExpDate - current.StartDate).Days;
+                average[c] = k;
+                c++;
             }
+
+            double avg = Queryable.Average(average.AsQueryable());
+            ExpDate = DateTime.Now.AddDays(avg);
+            expDate.Date = ExpDate;
         }
 
         private void Selected_Changed(object sender, EventArgs e)
@@ -115,6 +132,8 @@ namespace GEM.Pages
             int Quantity = Int32.Parse(quantity.SelectedItem.ToString());
             bool parsed;
             double PricePr;
+            DateTime StartDate = DateTime.Now;
+            DateTime ExpDate = expDate.Date;
 
             if (!String.IsNullOrEmpty(price.Text))
             {
@@ -127,30 +146,32 @@ namespace GEM.Pages
                 PricePr = 0;
             }
 
-
-            DateTime StartDate = DateTime.Now;
-            DateTime ExpDate = expDate.Date;
-
             if (parsed)
             {
                 var check = App.ProductListDatabase.CheckForList(BarCode, ListId);
-
-                if (!check.Any())
+                if (compartmentPicker.SelectedIndex != -1)
                 {
-                    if (App.ProductListDatabase.SaveProductLists(new ProductList(BarCode, ListId, PricePr, Quantity, StartDate, ExpDate)) == 1)
+                    if (!check.Any())
                     {
-                        DisplayAlert("Alert", "The product was added to your list", "Ok");
-                        Navigation.PopAsync();
-                        Navigation.PopAsync();
+                        if (App.ProductListDatabase.SaveProductLists(new ProductList(BarCode, ListId, PricePr, Quantity, StartDate, ExpDate)) == 1)
+                        {
+                            DisplayAlert("Alert", "The product was added to your list", "Ok");
+                            Navigation.PopAsync();
+                            Navigation.PopAsync();
+                        }
+                        else
+                        {
+                            DisplayAlert("Alert", "The product was not added to your list", "Ok");
+                        }
                     }
                     else
                     {
-                        DisplayAlert("Alert", "The product was not added to your list", "Ok");
+                        App.ProductListDatabase.UpdateQuantity(check[0].Quantity, Quantity, BarCode, ListId, PricePr, ExpDate);
                     }
                 }
                 else
                 {
-                    App.ProductListDatabase.UpdateQuantity(check[0].Quantity, Quantity, BarCode, ListId, PricePr, ExpDate);
+                    DisplayAlert("Alert", "Please select a list", "Ok");
                 }
             }
             else

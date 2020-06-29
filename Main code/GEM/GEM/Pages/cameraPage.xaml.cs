@@ -21,7 +21,6 @@ namespace GEM.Pages
     public partial class cameraPage : ContentPage
     {
         private int selectedListId;
-        private bool toggled = false;
 
         public cameraPage()
         {
@@ -51,10 +50,6 @@ namespace GEM.Pages
                 {
                     compartmentPicker.Items.Add(output[i].ListName);
                 }
-            }
-            else
-            {
-                DisplayAlert("Alert", "there are no lists for this user", "ok");
             }
         }
 
@@ -95,11 +90,27 @@ namespace GEM.Pages
 
             if (output.Any())
             {
-
+                DateTime ExpDate;
                 string productName = output[0].productName;
                 productNameText.Text = productName;
 
                 openFunctions1();
+
+                var averages = App.ExpiratonDateDatabase.GetAverage(barCode.Text);
+
+                int[] average = new int[output.Count()];
+                int c = 0;
+
+                foreach (var current in averages)
+                {
+                    int k = (current.ExpDate - current.StartDate).Days;
+                    average[c] = k;
+                    c++;
+                }
+
+                double avg = Queryable.Average(average.AsQueryable());
+                ExpDate = DateTime.Now.AddDays(avg);
+                expDate.Date = ExpDate;
             }
             else
             {
@@ -157,12 +168,10 @@ namespace GEM.Pages
             if(mySwitch.IsToggled)
             {
                 openFunctions2();
-                toggled = true;
             }
             else
             {
                 closeFunctions2();
-                toggled = false;
             }
         }
 
@@ -175,7 +184,7 @@ namespace GEM.Pages
             bool parsed;
             double PricePr;
             DateTime StartDate = DateTime.Now;
-            DateTime ExpDate;
+            DateTime ExpDate = expDate.Date;
 
             if (!String.IsNullOrEmpty(price.Text))
             {
@@ -187,32 +196,7 @@ namespace GEM.Pages
                 parsed = true;
                 PricePr = 0;
             }
-
-            if (!toggled)
-            {
-                var output = App.ExpiratonDateDatabase.GetAverage(BarCode);
-
-                int[] average = new int[output.Count()];
-                int c = 0;
-
-                foreach (var current in output)
-                {
-                    int k = (current.ExpDate - current.StartDate).Days;
-                    average[c] = k;
-                    c++;
-                }
-
-                double avg = Queryable.Average(average.AsQueryable());
-                ExpDate = DateTime.Now.AddDays(avg);
-            }
-            else
-            {
-                ExpDate = expDate.Date;
-            }
-
-            
-            
-
+                       
             if(parsed)
             {
                 var check = App.ProductListDatabase.CheckForList(BarCode, ListId);
@@ -247,6 +231,7 @@ namespace GEM.Pages
         {
             var scan = new ZXingScannerPage();
             await Navigation.PushAsync(scan);
+
             scan.OnScanResult += (result) =>
             {
                 Device.BeginInvokeOnMainThread(async () =>
