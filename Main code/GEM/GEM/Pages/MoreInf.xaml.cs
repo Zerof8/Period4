@@ -60,7 +60,7 @@ namespace GEM.Pages
                 
 
 
-                location.Text = output[0].ListName;
+                location.Text = output[0].ListName + " Type: " + output[0].ListCategory;
                 price.Text = output[0].Price.ToString() + " €";
                 quantity.Text = output[0].Quantity.ToString();
                 barCode.Text = barcode;

@@ -61,7 +61,7 @@ namespace GEM.Data
         {
             var output = database.Query<QueryForAll>("SELECT Product.productName, Product.category, Product.amount, " +
                                                      "ProductList.BuyDate, ProductList.ExpDate, ProductList.Price, ProductList.Quantity, " +
-                                                     "Lists.ListName " +
+                                                     "Lists.ListName, Lists.ListCategory " +
                                                      "FROM Product, ProductList, Lists " +
                                                      "WHERE (Product.barCode = ProductList.BarCode OR Product.Id = ProductList.BarCode) " +
                                                      "AND ProductList.ListId = Lists.ListId " +

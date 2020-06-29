@@ -49,6 +49,10 @@
             </Grid>
 
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3.5*"/>
+                </Grid.ColumnDefinitions>
                 <Label Text="Location:" Grid.Column="0" VerticalTextAlignment="Start"></Label>
                 <Label x:Name="location" Text="" Grid.Column="1" VerticalTextAlignment="Start"></Label>
             </Grid>

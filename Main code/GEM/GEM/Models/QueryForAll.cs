@@ -20,6 +20,7 @@ namespace GEM.Models
         public string ListName { get; set; }
         public DateTime BuyDate { get; set; }
         public DateTime ExpDate { get; set; }
+        public string ListCategory { get; set; }
 
         public QueryForAll() { }
     }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.gem" android:installLocation="preferExternal">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.FLASHLIGHT" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <application android:label="GEM.Android" android:icon="@mipmap/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="GEM" android:theme="@style/MainTheme" android:name="crc6425571ece189cf572.MainActivity">
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <application android:label="GEM.Android" android:icon="@drawable/gemicon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/gemicon" android:label="GEM" android:theme="@style/MainTheme" android:name="crc6425571ece189cf572.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
